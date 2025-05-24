@@ -6,12 +6,12 @@ import './Auth.css';
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState('');  
+  const [messageType, setMessageType] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,17 +19,16 @@ const Login = () => {
     setMessageType('');
 
     try {
- const res = await axios.post('https://nithinprojectbackend.onrender.com/api/auth/login', formData);
-
+      const res = await axios.post('https://nithinprojectbackend.onrender.com/api/auth/login', formData);
       setMessage(res.data.message);
-      setMessageType('success'); 
+      setMessageType('success');
 
       localStorage.setItem('token', res.data.token);
 
       setTimeout(() => navigate('/home'), 1000);
     } catch (error) {
       setMessage(error.response?.data?.message || 'Login failed');
-      setMessageType('error');  
+      setMessageType('error');
     }
   };
 
@@ -62,6 +61,6 @@ const Login = () => {
       )}
     </div>
   );
-}
 };
+
 export default Login;
