@@ -19,7 +19,7 @@ const Login = () => {
     setMessageType('');
 
     try {
-      const res = await axios.post('http://localhost:4700/api/auth/login', formData);
+ const res = await axios.post('https://nithinprojectbackend.onrender.com/api/auth/login', formData);
 
       setMessage(res.data.message);
       setMessageType('success'); 
