@@ -6,7 +6,7 @@ import './Auth.css';
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState('');  // New state for message type
+  const [messageType, setMessageType] = useState('');  
   const navigate = useNavigate();
 
   const handleChange = (e) => {
