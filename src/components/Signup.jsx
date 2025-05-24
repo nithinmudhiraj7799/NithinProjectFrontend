@@ -20,12 +20,13 @@ const Signup = () => {
     setIsSuccess(false);
 
     try {
-      const res = await axios.post('http://localhost:4700/api/auth/signup', formData, {
-        withCredentials: true,
-      });
+     const res = await axios.post('https://nithinprojectbackend.onrender.com/api/auth/signup', formData, {
+  withCredentials: true,
+});
 
       setMessage(res.data.message);
       setIsSuccess(true);
+      alert(res.data.message); 
       alert(res.data.message);  
 
       setFormData({ name: '', email: '', password: '' });
