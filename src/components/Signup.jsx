@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Auth.css';
@@ -28,6 +27,7 @@ const Signup = () => {
       setMessage(res.data.message);
       setIsSuccess(true);
       alert(res.data.message); 
+      alert(res.data.message);  
 
       setFormData({ name: '', email: '', password: '' });
 
