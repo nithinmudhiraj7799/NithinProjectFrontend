@@ -26,16 +26,15 @@ const Signup = () => {
 
       setMessage(res.data.message);
       setIsSuccess(true);
-      alert(res.data.message);  // Show alert on success
+      alert(res.data.message);  
 
       setFormData({ name: '', email: '', password: '' });
 
-      // Navigate to login page after signup success
       navigate('/login');
     } catch (error) {
       const errorMsg = error.response?.data?.message || 'Signup failed';
       setMessage(errorMsg);
-      alert(errorMsg); // Show alert on failure
+      alert(errorMsg); 
     }
   };
 
